@@ -11,7 +11,7 @@ const to = new PublicKey("6eGKgDhFAaLYkxoDMyx2NU4RyrSKfCXdRmqtjT7zodxQ");
 //Create a Solana devnet connection
 const connection = new Connection("https://api.devnet.solana.com");
 
-/*(async () => {
+(async () => {
     try {
         const transaction = new Transaction().add(
             SystemProgram.transfer({
@@ -34,7 +34,10 @@ const connection = new Connection("https://api.devnet.solana.com");
     } catch(e) {
         console.error(`Oops, something went wrong: ${e}`)
     }
-})();*/
+})();
+
+//Functions could not be performed at the same time, due to custom program error 0x1 (not enough funds).
+//They could be performed if the commitment is 'finalized' perhaps
 
 (async () => {
     try {
